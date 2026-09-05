@@ -9,12 +9,13 @@ class Solution {
 
         for (int k = 0; k < n - 2; k++) {
 
-            int i = k + 1;
-            int j = n - 1;
+            int left = k + 1;
+            int right = n - 1;
 
-            while (i < j) {
+            while (left < right) 
+            {
 
-                int sum = nums[k] + nums[i] + nums[j];
+                int sum = nums[k] + nums[left] + nums[right];
 
                 // Check whether current sum is closer
                 if (Math.abs(target - sum) < Math.abs(target - closestSum)) {
@@ -24,17 +25,16 @@ class Solution {
 
                 // Move pointers
                 if (sum < target) {
-                    i++;
+                    left++;
                 } 
                 else if (sum > target) {
-                    j--;
+                    right--;
                 } 
                 else {
                     return sum;   // exact answer
                 }
             }
         }
-
         return closestSum;
     }
 }
