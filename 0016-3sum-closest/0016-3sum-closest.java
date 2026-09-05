@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class Solution {
     public int threeSumClosest(int[] nums, int target) {
 
@@ -19,8 +17,7 @@ class Solution {
                 int sum = nums[k] + nums[i] + nums[j];
 
                 // Check whether current sum is closer
-                if (Math.abs(target - sum) <
-                    Math.abs(target - closestSum)) {
+                if (Math.abs(target - sum) < Math.abs(target - closestSum)) {
 
                     closestSum = sum;
                 }
